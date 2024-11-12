@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './Images/achieversIT.png'
+import logo from './Images/achieversIT.png';
+import Corousel from './Corousel';
 const Home = () => {
   return (
     <div>
@@ -9,17 +10,17 @@ const Home = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="col-6">
-        <div className="row  text text-center mt-4" >
+        <div className="row mt-4" >
        <div className="col-2">Home</div>
        <div className="col-2">Shop</div>
        <div className="col-2">Cart</div>
        </div>
-
-
       </div>
     </div>
    </div>
-    </div>
+   <Corousel />
+   
+   </div>
   )
 }
 
