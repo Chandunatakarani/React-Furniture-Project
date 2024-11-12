@@ -9,15 +9,11 @@ import './Corousel.css'
 
 function Corousel() {
     return (
-        <div id="carouselExample" className="carousel slide">
+        <div id="carouselExample" className="carousel slide ">
             <div className="carousel-inner">
-                <div className="carousel-item active  d-flex hero">
-                    <div className="hero1">
-                        <h3>50% Off For Your <br /> First Shopping</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Quis lobortis consequat eu, quam etiam at quis ut <br />convallis.</p>
-                    </div>
+                <div className="carousel-item active ">
                     <div>
-                        <img src={hero1} className="d-block w-100" alt="..." />
+                        <img src={hero1} className="d-block w-50" alt="..." />
                     </div>
                 </div>
                 <div className="carousel-item">
