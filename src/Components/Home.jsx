@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './Images/achieversIT.png';
 import Corousel from './Corousel';
+import './Corousel.css'
 const Home = () => {
   return (
     <div>
@@ -19,6 +20,10 @@ const Home = () => {
     </div>
    </div>
    <Corousel />
+   <div className="carousel-data">
+    <h3>50% Off For Your<br /> First Shopping</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Quis lobortis consequat eu, quam etiam at quis ut<br /> convallis</p>
+   </div>
    
    </div>
   )
