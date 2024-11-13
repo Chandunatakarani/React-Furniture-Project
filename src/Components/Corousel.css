@@ -10,3 +10,12 @@
 .hero4{
     width:80%;
 }
+.user-profile{
+    margin-left:30px;
+}
+.cart-symbol{    
+    display: inline-block;
+    margin-left:100px;
+    position: relative;
+    top: -23px;
+}

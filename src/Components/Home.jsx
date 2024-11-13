@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './Images/achieversIT.png';
 import Corousel from './Corousel';
 import './Corousel.css'
+import Cards from './Cards';
+import Discount from './Discount';
 const Home = () => {
   return (
     <div>
@@ -13,8 +15,11 @@ const Home = () => {
       <div className="col-6">
         <div className="row mt-4" >
        <div className="col-2">Home</div>
-       <div className="col-2">Shop</div>
-       <div className="col-2">Cart</div>
+       <div className="col-2">Shop</div>  
+       <div className="col-2">Cart
+       <i className="fa fa-user user-profile"></i>
+       <i className="fa fa-cart-plus cart-symbol"></i>       
+       </div>
        </div>
       </div>
     </div>
@@ -24,7 +29,8 @@ const Home = () => {
     <h3>50% Off For Your<br /> First Shopping</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Quis lobortis consequat eu, quam etiam at quis ut<br /> convallis</p>
    </div>
-   
+   <Cards />
+   <Discount />
    </div>
   )
 }
