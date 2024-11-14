@@ -19,3 +19,17 @@
     position: relative;
     top: -23px;
 }
+.discount-button{
+    background-color: darkblue;
+    color: white;
+    border-radius: 30px;
+}
+.rating-star{
+    color:yellow;
+}
+.plus-symbol{
+    margin-left: 109px;
+    font-size: 43px;
+    position: absolute;
+    margin-top: -32px;
+}

@@ -4,6 +4,8 @@ import Corousel from './Corousel';
 import './Corousel.css'
 import Cards from './Cards';
 import Discount from './Discount';
+import Newarrivals from './Newarrivals';
+import Bestsales from './Bestsales';
 const Home = () => {
   return (
     <div>
@@ -31,6 +33,8 @@ const Home = () => {
    </div>
    <Cards />
    <Discount />
+   <Newarrivals />
+   <Bestsales />
    </div>
   )
 }
