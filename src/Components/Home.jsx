@@ -6,6 +6,7 @@ import Cards from './Cards';
 import Discount from './Discount';
 import Newarrivals from './Newarrivals';
 import Bestsales from './Bestsales';
+import Footer from './Footer';
 const Home = () => {
   return (
     <div>
@@ -35,6 +36,7 @@ const Home = () => {
    <Discount />
    <Newarrivals />
    <Bestsales />
+   <Footer />
    </div>
   )
 }

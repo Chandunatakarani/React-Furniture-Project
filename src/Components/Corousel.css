@@ -33,3 +33,10 @@
     position: absolute;
     margin-top: -32px;
 }
+.footerbg{
+    background-color: darkblue;
+}
+.footer{
+    border: none;
+    background-color: darkblue;
+}
