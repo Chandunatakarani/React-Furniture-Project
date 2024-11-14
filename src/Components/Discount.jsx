@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { discoutProducts } from './Product';
 import './Corousel.css';
-
+import { Link } from 'react-router-dom';
 const Discount = () => {
+    
+    
     const [discount, setDiscount] = useState([]);
 
     useEffect(() => {
         setDiscount(discoutProducts);
     }, []);
-
+    const imageclicked = async()=>{
+     
+    }
     return (
         <>
             <h2 className='text-success text-center mb-4'>Discount Available On</h2>
@@ -22,7 +26,9 @@ const Discount = () => {
                                     <button className='discount-button'>
                                         <h6>{item.discount}% off</h6>
                                     </button>
-                                    <img className="w-100" src={item.imgUrl} alt={item.productName} />
+                                    <Link to={`/products/${item.category}/${item.id}`}>
+                                    <img className="w-100" src={item.imgUrl} alt={item.productName}  onClick={()=>imageclicked()}/>
+                                    </Link>
                                     <div className="card-body">
                                         <h4>{item.productName}</h4>
                                         <div className="rating">

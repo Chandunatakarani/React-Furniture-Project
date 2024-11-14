@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { bestsales } from './Product';
+import { Link } from 'react-router-dom';
 
 const Bestsales = () => {
     const[sales,setsales]=useState([])
     useEffect(()=>{
         setsales(bestsales)
     },[])
-    console.log(sales)
   return (
     <div>
         <h1 className='text-center text-success'> Best Sales</h1>
@@ -18,7 +18,9 @@ const Bestsales = () => {
                         <div className="col-4">
                         <div className="card">
                             <div className="card-title">
+                            <Link to={`/products/${item.category}/${item.id}`}>
                                 <img  className="w-100"src={item.imgUrl} alt="" />
+                                </Link>
                                 <div className="card-body">
                                 <h4>{item.productName}</h4>
                                     <div className="rating">

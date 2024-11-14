@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { newarrivals } from './Product'
+import { Link } from 'react-router-dom'
 
 const Newarrivals = () => {
     const[arrivals,setarrivals]=useState([])
@@ -17,7 +18,9 @@ const Newarrivals = () => {
                         <div className="col-4" >
                             <div className="card">
                                 <div className="card-title">
+                                <Link to={`/products/${item.category}/${item.id}`}>
                                     <img className='w-100' src={item.imgUrl} alt="" />
+                                    </Link>
                                     <div className="card-body">
                                     <h4>{item.productName}</h4>
                                     <div className="rating">
