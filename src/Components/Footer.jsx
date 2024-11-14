@@ -24,7 +24,13 @@ const Footer = () => {
                         <div className="card-title">
                             <h3 className='text-center'>About Us</h3>
                             <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores rem tenetur ipsa tempore dolorem odit sint ut cupiditate enim laborum?
+                                <ul className='footer-about'>
+                                    <li>Careers</li>
+                                    <li>Our Stores</li>
+                                    <li>Our Cares</li>
+                                    <li>Terms & Conditions</li>
+                                    <li>Privacy Policy</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -34,7 +40,13 @@ const Footer = () => {
                         <div className="card-title">
                             <h3 className='text-center'>Customer Care</h3>
                             <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores rem tenetur ipsa tempore dolorem odit sint ut cupiditate enim laborum?
+                            <ul className='footer-about'>
+                                    <li>Help Center</li>
+                                    <li>How To Buy</li>
+                                    <li>Track Your Order</li>
+                                    <li>Corporate $ Bulk Purchasing</li>
+                                    <li>Returns & Refunds</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -44,7 +56,12 @@ const Footer = () => {
                         <div className="card-title">
                             <h3 className='text-center'>Contact Us</h3>
                             <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores rem tenetur ipsa tempore dolorem odit sint ut cupiditate enim laborum?
+                            <ul className='footer-about'>
+                                    <li>70 Washington Square South, New York, NY 10012,United States</li>
+                                    <li>Email:chandunatakarani@gmail.com</li>
+                                    <li>Phone:+91 8688208544</li>
+                                    
+                                </ul>
                             </div>
                         </div>
                     </div>
