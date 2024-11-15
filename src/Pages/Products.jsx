@@ -23,10 +23,14 @@ const Product = () => {
       (product) => product.category ==="sofa"
     );
     setsofa(sofacategory)
+    
   }, [])
   console.log(singleproduct);
   console.log(filteredproducts);
-  console.log(sofa);
+  // console.log(sofa);
+  // const imageclicked = ()=>{
+  //  setsofa(singleproduct)
+  // }
   return (
     <div>
       <Header />
@@ -61,7 +65,7 @@ const Product = () => {
               <div className="col-4">
                 <div className="card">
                   <div className="card-title">
-                <img  className="w-100"src={sofaproduct.imgUrl} alt="" />
+                <img className="w-100"src={sofaproduct.imgUrl} alt="" />
                 <h4>{sofaproduct.productName}</h4>
                 <div className="rating">
                                         <i className="fa fa-star rating-star" ></i>
