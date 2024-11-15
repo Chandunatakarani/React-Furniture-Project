@@ -2,7 +2,7 @@ import React from 'react'
 const Cards = () => {
   return (
     <div>
-    <div className="container">
+    <div className="container g-5">
       <div className="row">
         <div className="col-3">
           <div className="card" style={{ backgroundColor: "#fdefe6" }}>

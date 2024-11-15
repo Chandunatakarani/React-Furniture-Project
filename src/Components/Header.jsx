@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/" className="no-underline-link">Home</Link>
         </div>
       <div className="col-2 navbar-links">
-        <Link to="/products">
+        <Link to="/products/:category/:id">
         Shop
         </Link>
         </div>
