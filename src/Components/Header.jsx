@@ -20,7 +20,10 @@ const Header = () => {
         Shop
         </Link>
         </div>
-       <div className="col-2">Cart
+       <div className="col-2">
+       <Link to="/Cart">
+        Cart
+        </Link>
        <i className="fa fa-user user-profile"></i>
        <i className="fa fa-cart-plus cart-symbol"></i>       
        </div>

@@ -2,18 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { discoutProducts } from './Product';
 import './Corousel.css';
 import { Link } from 'react-router-dom';
-import { sofadata } from '../Pages/Products';
+import { dsdata } from '../Pages/Cart';
 const Discount = () => {
     
     
     const [discount, setDiscount] = useState([]);
-    const sofa=useContext(sofadata)
+    const sofa=useContext(dsdata)
 
     useEffect(() => {
         setDiscount(discoutProducts);
     }, []);
     const imageclicked = ()=>{
-        console.log({sofa});
+        // console.log(sofa);
         
     }
     return (
