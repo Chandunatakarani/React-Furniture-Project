@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Header from '../Components/Header';
 import { useParams } from 'react-router-dom';
 import { products } from '../Components/Product';
 import backgroundimage from '../Components/Images/pexels-pixabay-531880.jpg';
 import '../Components/Corousel.css';
 import Footer from '../Components/Footer';
+ export const sofadata=createContext()
+
 const Product = () => {
   const { category, id } = useParams()
   const [filteredproducts, setfilteredproducts] = useState([])
@@ -25,13 +27,14 @@ const Product = () => {
     setsofa(sofacategory)
     
   }, [])
-  console.log(singleproduct);
-  console.log(filteredproducts);
+  // console.log(singleproduct);
+  // console.log(filteredproducts);
   // console.log(sofa);
   // const imageclicked = ()=>{
   //  setsofa(singleproduct)
   // }
   return (
+    <sofadata.Provider value={{singleproduct}}>
     <div>
       <Header />
       <img className='background-image' src={backgroundimage} alt="" />
@@ -65,7 +68,7 @@ const Product = () => {
               <div className="col-4">
                 <div className="card">
                   <div className="card-title">
-                <img className="w-100"src={sofaproduct.imgUrl} alt="" />
+                <img  className="w-100"src={sofaproduct.imgUrl} alt="" />
                 <h4>{sofaproduct.productName}</h4>
                 <div className="rating">
                                         <i className="fa fa-star rating-star" ></i>
@@ -93,6 +96,7 @@ const Product = () => {
       </div>
       <Footer />
     </div>
+    </sofadata.Provider>
   )
 }
 

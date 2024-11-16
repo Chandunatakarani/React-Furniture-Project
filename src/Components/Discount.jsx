@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { discoutProducts } from './Product';
 import './Corousel.css';
 import { Link } from 'react-router-dom';
+import { sofadata } from '../Pages/Products';
 const Discount = () => {
     
     
     const [discount, setDiscount] = useState([]);
+    const sofa=useContext(sofadata)
 
     useEffect(() => {
         setDiscount(discoutProducts);
     }, []);
-    const imageclicked = async()=>{
-     
+    const imageclicked = ()=>{
+        console.log({sofa});
+        
     }
     return (
         <>
@@ -27,7 +30,7 @@ const Discount = () => {
                                         <h6>{item.discount}% off</h6>
                                     </button>
                                     <Link to={`/products/${item.category}/${item.id}`}>
-                                    <img className="w-100" src={item.imgUrl} alt={item.productName}  onClick={()=>imageclicked()}/>
+                                    <img  onClick={()=>imageclicked()}className="w-100" src={item.imgUrl} alt={item.productName}/>
                                     </Link>
                                     <div className="card-body">
                                         <h4>{item.productName}</h4>
@@ -54,7 +57,7 @@ const Discount = () => {
                 </div>
             </div>
         </>
-    );
+            );
 };
 
 export default Discount;
