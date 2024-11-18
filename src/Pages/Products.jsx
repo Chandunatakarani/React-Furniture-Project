@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import Header from '../Components/Header';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { products } from '../Components/Product';
 import backgroundimage from '../Components/Images/pexels-pixabay-531880.jpg';
 import '../Components/Corousel.css';
 import Footer from '../Components/Footer';
-export const sofadata = createContext()
+export const Sofadata = createContext()
 
 const Product = () => {
   const { category, id } = useParams()
@@ -25,8 +25,23 @@ const Product = () => {
       (product) => product.category === "sofa"
     );
     setsofa(sofacategory)
-
-  }, [])
+  
+   
+  },
+   [category,id])
+   const imageagainclicked = ()=>{
+    const updatedproduct = products.filter(
+      (product) => product.category === category && product.id === id
+    );
+    setsingleproduct(updatedproduct)   
+  }
+  const dropdownclicked = (element)=>{
+    const dropdown = products.filter(
+      (product) => product.category === element
+    )      
+    Navigate(`/products/:element/:id`);         
+    setfilteredproducts(dropdown)
+   }
   // console.log(singleproduct);
   // console.log(filteredproducts);
   // console.log(sofa);
@@ -34,7 +49,7 @@ const Product = () => {
   //  setsofa(singleproduct)
   // }
   return (
-    <sofadata.Provider value={{ singleproduct,sofa }}>
+    <Sofadata.Provider value={{category,id}}>
       <div>
         <Header />
         <img className='background-image' src={backgroundimage} alt="" />
@@ -49,12 +64,10 @@ const Product = () => {
                   Dropdown button
                 </button>
                 <ul className="dropdown-menu">
-                  <Link to="/products/:category/:id">
-                  <li className="dropdown-item">Sofa</li>
-                  <li className="dropdown-item">Mobile</li>
-                  <li className="dropdown-item">Chair</li>
-                  <li className="dropdown-item">Headphones</li>
-                  </Link>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('Sofa')}>Sofa</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('Mobile')}>Mobile</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('Chair')}>Chair</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('Headphones')}>Headphones</li>
                 </ul>
               </div>
             </div>
@@ -107,7 +120,7 @@ const Product = () => {
                     <div className="card">
                       <div className="card-title">
                       <Link to={`/products/${item.category}/${item.id}`}>
-                        <img className="w-100" src={item.imgUrl} alt="" />
+                        <img className="w-100" src={item.imgUrl} alt="" onClick={()=>imageagainclicked()} />
                         </Link>
                         <h4>{item.productName}</h4>
                         <div className="rating">
@@ -136,7 +149,7 @@ const Product = () => {
         </div>
         <Footer />
       </div>
-    </sofadata.Provider>
+    </Sofadata.Provider>
   )
 }
 

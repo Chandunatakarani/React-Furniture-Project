@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { discoutProducts } from './Product';
 import './Corousel.css';
 import { Link } from 'react-router-dom';
-import { dsdata } from '../Pages/Cart';
 const Discount = () => {
     
     
     const [discount, setDiscount] = useState([]);
-    const sofa=useContext(dsdata)
+    // const sofa=useContext()
 
     useEffect(() => {
         setDiscount(discoutProducts);
@@ -45,9 +44,11 @@ const Discount = () => {
                                             <div className="col-6">
                                                 <h4>Price: ${item.price}</h4>
                                             </div>
+                                            
                                             <div className="col-6">
-                                                <button className="btn plus-symbol">+</button>
+                                            <Link to='cart/:category/:id'>  <button className="btn plus-symbol">+</button></Link>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
