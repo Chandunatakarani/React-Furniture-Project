@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import Header from '../Components/Header';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { products } from '../Components/Product';
 import backgroundimage from '../Components/Images/pexels-pixabay-531880.jpg';
 import '../Components/Corousel.css';
@@ -12,6 +12,8 @@ const Product = () => {
   const [filteredproducts, setfilteredproducts] = useState([])
   const [singleproduct, setsingleproduct] = useState([])
   const [sofa, setsofa] = useState([])
+  const [search,setsearch] =useState(" ")
+  const [searcheditem,setsearcheditem] = useState([])
   useEffect(() => {
     const singlefiltered = products.filter(
       (product) => product.id === id
@@ -25,23 +27,39 @@ const Product = () => {
       (product) => product.category === "sofa"
     );
     setsofa(sofacategory)
-  
+    const searchedproductExact = products.filter(
+      (product) => product.productName.toLowerCase().trim() === search.toLowerCase().trim()
+    );
+    const searchedproduct = products.filter(
+      (product) => product.productName.toLowerCase().includes(search.toLowerCase().trim())
+    )
+    setsearcheditem(searchedproductExact);
+   console.log(searchedproduct)
    
   },
-   [category,id])
+   [category,id,search])
+    
    const imageagainclicked = ()=>{
     const updatedproduct = products.filter(
       (product) => product.category === category && product.id === id
     );
     setsingleproduct(updatedproduct)   
   }
-  const dropdownclicked = (element)=>{
+  const dropdownclicked = (element)=>{   
+    console.log(element);
+     
     const dropdown = products.filter(
       (product) => product.category === element
     )      
-    Navigate(`/products/:element/:id`);         
-    setfilteredproducts(dropdown)
+    setfilteredproducts(dropdown);
+    const dropdown1 = products.find(
+      (product) => product.category ===element
+    )  
+    setsingleproduct([dropdown1]);          
    }
+   console.log(search);
+   
+  
   // console.log(singleproduct);
   // console.log(filteredproducts);
   // console.log(sofa);
@@ -64,15 +82,17 @@ const Product = () => {
                   Dropdown button
                 </button>
                 <ul className="dropdown-menu">
-                  <li className="dropdown-item" onClick={()=>dropdownclicked('Sofa')}>Sofa</li>
-                  <li className="dropdown-item" onClick={()=>dropdownclicked('Mobile')}>Mobile</li>
-                  <li className="dropdown-item" onClick={()=>dropdownclicked('Chair')}>Chair</li>
-                  <li className="dropdown-item" onClick={()=>dropdownclicked('Headphones')}>Headphones</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('sofa')}>Sofa</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('mobile')}>Mobile</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('chair')}>Chair</li>
+                  <li className="dropdown-item" onClick={()=>dropdownclicked('wireless')}>Headphones</li>
                 </ul>
               </div>
             </div>
             <div className="col-8">
-              <input className="search-bar" type="search" placeholder='search...' />
+              <form>
+              <input className="search-bar" type="search" placeholder='search...' value={search} onChange={(e)=>{setsearch(e.target.value)}}/>
+              </form>
             </div>
           </div>
         </div>
