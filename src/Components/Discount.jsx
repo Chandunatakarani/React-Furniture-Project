@@ -4,6 +4,7 @@ import './Corousel.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addtocart } from '../Redux-store/ActionCreator';
+import 'react-toastify/dist/ReactToastify.css'; 
 const Discount = () => {
     
     
@@ -20,9 +21,9 @@ const Discount = () => {
     }
     return (
         <>
-            <h2 className='text-success text-center mb-4'>Discount Available On</h2>
+            <h2 className='text-success text-center mt-5'>Discount Available On</h2>
 
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     {discount.map((item) => (
                         <div key={item.id} className="col-12 col-md-4 mb-4">
@@ -50,6 +51,7 @@ const Discount = () => {
                                             
                                             <div className="col-6">
                                              <button className="btn plus-symbol" onClick={()=>dispatch(addtocart(item))}>+</button>
+                                            
                                             </div>
                                             
                                         </div>

@@ -39,7 +39,6 @@ const Product = () => {
    console.log(searchedproduct)
   },
    [category,id,search])
-    
    const imageagainclicked = ()=>{
     const updatedproduct = products.filter(
       (product) => product.category === category && product.id === id
@@ -120,7 +119,7 @@ const Product = () => {
                             <h6 className='category'>Category:{sofaproduct.category}</h6>
                             <p>{sofaproduct.shortDesc}</p>
                             <input className="form-number" type="number"placeholder='Quantity'></input>
-                            <button className='plus-button' onClick={()=>dispatch(addtocart(sofaproduct))}>Add To Cart</button>
+                            <button className='plus-button' onClick={()=>dispatch(addtocart(sofaproduct))} >Add To Cart</button>
                     </div>
                   </div>
                 </>
