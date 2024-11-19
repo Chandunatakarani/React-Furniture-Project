@@ -20,7 +20,7 @@ const Header = () => {
         Shop
         </Link>
         </div>
-       <div className="col-2">
+       <div className="col-2 navbar-links">
        <Link to="/Cart">
         Cart
         </Link>

@@ -5,8 +5,9 @@ import { products } from '../Components/Product';
 import backgroundimage from '../Components/Images/pexels-pixabay-531880.jpg';
 import '../Components/Corousel.css';
 import Footer from '../Components/Footer';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Redux-store/ActionCreator';
 export const Sofadata = createContext()
-
 const Product = () => {
   const { category, id } = useParams()
   const [filteredproducts, setfilteredproducts] = useState([])
@@ -14,6 +15,7 @@ const Product = () => {
   const [sofa, setsofa] = useState([])
   const [search,setsearch] =useState(" ")
   const [searcheditem,setsearcheditem] = useState([])
+  const dispatch= useDispatch()
   useEffect(() => {
     const singlefiltered = products.filter(
       (product) => product.id === id
@@ -118,7 +120,7 @@ const Product = () => {
                             <h6 className='category'>Category:{sofaproduct.category}</h6>
                             <p>{sofaproduct.shortDesc}</p>
                             <input className="form-number" type="number"placeholder='Quantity'></input>
-                            <button className='plus-button'>Add To Cart</button>
+                            <button className='plus-button' onClick={()=>dispatch(addtocart(sofaproduct))}>Add To Cart</button>
                     </div>
                   </div>
                 </>
@@ -154,7 +156,7 @@ const Product = () => {
                             <h4>Price: ${item.price}</h4>
                           </div>
                           <div className="col-6">
-                            <button className="btn plus-symbol">+</button>
+                            <button className="btn plus-symbol"onClick={()=>dispatch(addtocart(item))}>+</button>
                           </div>
                         </div>
                       </div>

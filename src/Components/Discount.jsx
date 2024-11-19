@@ -49,7 +49,7 @@ const Discount = () => {
                                             </div>
                                             
                                             <div className="col-6">
-                                            <Link to='/cart'>  <button className="btn plus-symbol" onClick={()=>dispatch(addtocart(item))}>+</button></Link>
+                                             <button className="btn plus-symbol" onClick={()=>dispatch(addtocart(item))}>+</button>
                                             </div>
                                             
                                         </div>

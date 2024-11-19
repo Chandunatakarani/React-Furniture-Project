@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { newarrivals } from './Product'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Redux-store/ActionCreator';
 
 const Newarrivals = () => {
     const[arrivals,setarrivals]=useState([])
+    const dispatch= useDispatch()
     useEffect(()=>{
        setarrivals(newarrivals)
     },[])    
@@ -35,7 +38,7 @@ const Newarrivals = () => {
                                                 <h4>Price: ${item.price}</h4>
                                             </div>
                                             <div className="col-6">
-                                                <button className="btn plus-symbol">+</button>
+                                                <button className="btn plus-symbol" onClick={()=>dispatch(addtocart(item))}>+</button>
                                             </div>
                                             </div>
                                     </div>
