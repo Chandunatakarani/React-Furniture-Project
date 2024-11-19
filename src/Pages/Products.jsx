@@ -35,7 +35,6 @@ const Product = () => {
     )
     setsearcheditem(searchedproductExact);
    console.log(searchedproduct)
-   
   },
    [category,id,search])
     

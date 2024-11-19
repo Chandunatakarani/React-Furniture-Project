@@ -2,11 +2,14 @@ import React, {useEffect, useState } from 'react';
 import { discoutProducts } from './Product';
 import './Corousel.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Redux-store/ActionCreator';
 const Discount = () => {
     
     
     const [discount, setDiscount] = useState([]);
     // const sofa=useContext()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setDiscount(discoutProducts);
@@ -46,7 +49,7 @@ const Discount = () => {
                                             </div>
                                             
                                             <div className="col-6">
-                                            <Link to='cart/:category/:id'>  <button className="btn plus-symbol">+</button></Link>
+                                            <Link to='/cart'>  <button className="btn plus-symbol" onClick={()=>dispatch(addtocart(item))}>+</button></Link>
                                             </div>
                                             
                                         </div>
