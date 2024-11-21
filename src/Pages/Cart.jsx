@@ -20,7 +20,7 @@ const Cart = () => {
       <Header />
       
       {cartdata.length > 0 ? (
-        <div className="card w-25 cart-summary">
+        <div className="card w-25 cart-summary mt-5">
           <div className="card-title">
             <h4>Cart Summary</h4>
             <div className="card-body">
